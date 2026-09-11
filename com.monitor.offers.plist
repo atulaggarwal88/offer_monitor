@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>com.monitor.offers</string>
+    <key>ProgramArguments</key>    
+    <array>
+        <string>/Users/atulaggarwal/Documents/myWorkspace/monitor-offers/run_monitor.sh</string>
+    </array>
+
+    <!-- Daily scan schedule -->
+    <key>StartCalendarInterval</key>
+    <array>
+        <!-- First time: 8:05 AM (test whether mac is able to send notification without wake up)-->
+        <dict>
+            <key>Hour</key>
+            <integer>8</integer>
+            <key>Minute</key>
+            <integer>5</integer>
+        </dict>
+        <!-- Second time: 12:20 PM, aligned as per mac wake up time at 12:15pm -->
+        <dict>
+            <key>Hour</key>
+            <integer>12</integer>
+            <key>Minute</key>
+            <integer>20</integer>
+        </dict>
+    </array>
+    
+    <key>EnvironmentVariables</key>
+    <dict>
+        <key>PATH</key>
+        <string>/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/homebrew/bin</string>        
+    </dict>
+
+    <key>StandardOutPath</key>
+    <string>/Users/atulaggarwal/Documents/myWorkspace/monitor-offers/logs/stdout.log</string>
+    <key>StandardErrorPath</key>
+    <string>/Users/atulaggarwal/Documents/myWorkspace/monitor-offers/logs/stderr.log</string>
+
+    <!-- Optional: set to false so it waits until 7:15 PM rather than triggering immediately upon loading -->
+    <key>RunAtLoad</key>
+    <false/>
+    
+</dict>
+</plist>

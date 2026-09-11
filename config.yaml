@@ -1,0 +1,25 @@
+# Configuration for Agno Firecrawl Web Search Agent
+
+model_id: "gemini-3.5-flash"
+
+targets:
+  - name: "OzBargain Coles Gift Cards"
+    url: "https://www.ozbargain.com.au/tag/coles-gift-card"
+    prompt: "Scrape this ozbargain url and give the list of all active gift card deals. Do not include expired deals. Include title, link, submitted timestamp for the deal."
+  
+  - name: "OzBargain Restaurant choice cards"
+    url: "https://www.ozbargain.com.au/product/best-restaurants-gift-card"
+    prompt: "Scrape this ozbargain url and give the list of all active restaurant choice card deals. Do not include expired deals. Include title, link, submitted timestamp for the deal."
+
+  - name: "Finder Cashback Deals"
+    url: "https://www.finder.com.au/cashback-deals"
+    prompt: "Scrape finder.com.au for deals related to internet plans that have an offer. Include title, link, details, and submitted timestamp for the deal."
+
+notifiers:
+  file:
+    enabled: true
+    output_path: "build/offers_log.md"
+  slack:
+    enabled: true
+    send_heartbeat: true
+
