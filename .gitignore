@@ -4,3 +4,5 @@ __pycache__/
 seen_deals.json
 *.log
 build
+.DS_STORE
+TODO.md
